@@ -9,11 +9,13 @@
 include_once APPPATH . "controllers/BaseController.php";
 class JobsController extends BaseController
 {
+    private $userId;
+
     public function __construct()
 	{
-        $userId;
 		parent::__construct();
         $this->load->library('form_validation');
+        $this->load->library('pagination');
         $this->load->model('jobs');
         $this->userId = $this->session->userdata('user_id');
     }
@@ -23,7 +25,6 @@ class JobsController extends BaseController
         $this->processPagination();
         $this->layout->view('jobs/index', $this->data);
     }
-
 
     public function create()
     {
@@ -90,6 +91,12 @@ class JobsController extends BaseController
         }
     }
 
+    public function applications()
+    {
+        $this->processPaginationForApplications();
+        $this->layout->view('jobs/applications', $this->data);
+    }
+
     public function delete()
     {
         $data = $this->uri->uri_to_assoc();
@@ -104,8 +111,8 @@ class JobsController extends BaseController
 
     private function processPagination()
     {
-        $this->load->library('pagination');
-        $url = site_url('jobs');
+
+        $url = site_url('jobs/index');
 
         $uriAssoc = $this->uri->uri_to_assoc();
         $page = empty ($uriAssoc['page']) ? 0 : $uriAssoc['page'];
@@ -115,6 +122,24 @@ class JobsController extends BaseController
             'baseUrl' => $url . '/page/',
             'segmentValue' => $this->uri->getSegmentIndex('page') + 1,
             'numRows' => $this->jobs->countAll()
+        );
+
+        $this->pagination->setOptions($paginationOptions);
+    }
+
+    private function processPaginationForApplications()
+    {
+        $this->load->model('jobboards');
+        $url = site_url('jobs/applications');
+
+        $uriAssoc = $this->uri->uri_to_assoc();
+        $page = empty ($uriAssoc['page']) ? 0 : $uriAssoc['page'];
+        $this->data['jobs'] = $this->jobboards->getAllApplications($page, $this->userId);
+
+        $paginationOptions = array(
+            'baseUrl' => $url . '/page/',
+            'segmentValue' => $this->uri->getSegmentIndex('page') + 1,
+            'numRows' => $this->jobboards->countAllApplicants($this->userId)
         );
 
         $this->pagination->setOptions($paginationOptions);

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Description of Users
+ * Description of Jobs
  *
  * @package     Model
  * @author      Eftakhairul Islam <eftakhairul@gmail.com>
@@ -37,6 +37,27 @@ class Jobs extends MY_Model
         return $this->db->count_all("{$this->table}");
     }
 
+    public function countAllByApplicantId($applicantId = null)
+    {
+        if(empty($applicantId)) {
+            return false;
+        }
+
+        $sql = "SELECT COUNT(job_id) AS total
+                FROM  `jobs`
+                WHERE `job_id` not in (SELECT `job_id`
+                                           FROM `job_boards`
+                                            WHERE `applicant_id` = {$applicantId})";
+
+        $result = $this->db->query($sql)->row_array();
+
+        if(empty($result)) {
+            return 0;
+        }
+
+        return $result['total'];
+    }
+
     public function getAll($offset = 0, $userId = null)
     {
         $limit = $this->config->item('rowsPerPage');
@@ -46,6 +67,30 @@ class Jobs extends MY_Model
         } else {
             return $this->findAll("user_id = {$userId}", '*', null, $offset, $limit);
         }
+    }
+
+    public function getAllByApplicantId($offset = 0, $applicantId = null)
+    {
+        if(empty($applicantId)) {
+            return false;
+        }
+
+        $limit = $this->config->item('rowsPerPage');
+
+        $sql = "SELECT *
+                FROM  `jobs`
+                WHERE `job_id` not in (SELECT `job_id`
+                                           FROM `job_boards`
+                                            WHERE `applicant_id` = {$applicantId})
+                LIMIT $offset , {$limit}";
+
+        $result =  $this->db->query($sql)->result_array();
+
+        if(empty($result)) {
+            return false;
+        }
+
+        return $result;
     }
 
     public function getDetailsByJobsId($jobsId = null)

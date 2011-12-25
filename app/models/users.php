@@ -35,34 +35,17 @@ class Users extends MY_Model
         $data['password'] = md5($data['password']);
         return $this->find($data, 'username, user_id, types');
     }
-    
 
     public function getAll($offset = 0)
     {
         $limit = $this->config->item('rowsPerPage');
-        $this->db->select();
-        $this->db->from($this->table);
-        $this->db->join('profiles', "profiles.{$this->primaryKey}={$this->table}.{$this->primaryKey}");
-        $this->db->join('user_types', "user_types.user_type_id={$this->table}.user_type_id");
-        $this->db->limit($limit, $offset);
 
-        return $this->db->get()->result_array();
+        return $this->findAll(null, '*', null, $offset, $limit);
     }
 
-    public function countAllUsers()
+    public function countAll()
     {
         return $this->db->count_all("{$this->table}");
-    }
-
-    public function getDetail($userId)
-    {
-        $this->db->select();
-        $this->db->from($this->table);
-        $this->db->join('profiles', "profiles.{$this->primaryKey}={$this->table}.{$this->primaryKey}");
-        $this->db->join('user_types', "user_types.user_type_id={$this->table}.user_type_id");
-        $this->db->where("{$this->table}.{$this->primaryKey}", $userId);
-
-        return $this->db->get()->row_array();
     }
 
     public function checkUsernameExisted($username)
@@ -85,12 +68,5 @@ class Users extends MY_Model
         }
 
         return $this->update($data, $data['user_id']);
-    }
-
-    public function getUserTypes()
-    {
-        $this->db->select('*');
-        $this->db->from('user_types');
-        return $this->db->get()->result_array();
     }
 }

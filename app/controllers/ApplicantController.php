@@ -26,7 +26,7 @@ class ApplicantController extends BaseController
            if ($this->form_validation->run()) {
 
                if ($result  = $this->applicants->modify($_POST, $applicantId)) {
-                    $this->redirectForSuccess('season', 'Your information has been updated successfully');
+                    $this->redirectForSuccess('home/applicant-dashboard', 'Your information has been updated successfully');
                } else {
                    $this->data['error'] = 'Data is not save';
                }
@@ -40,5 +40,45 @@ class ApplicantController extends BaseController
        }
 
         $this->layout->view('applicant/edit-applicant', $this->data);
+    }
+
+    public function updateCV()
+    {
+        $applicantId = $this->session->userdata('user_id');
+
+        if (!empty ($_POST)){
+
+            if($data['cv'] = $this->applicantCVUpload()){
+                if ($this->applicants->modify($data['cv'], $applicantId)) {
+                    $this->redirectForSuccess('home/applicant-dashboard', 'Your information has been updated successfully');
+               }
+            } else {
+                $this->redirectForFailure('applicant/updateCV' ,"Please upload your CV correctly");
+            }
+        }
+
+        $this->layout->view('applicant/update-cv', $this->data);
+    }
+
+    private function applicantCVUpload()
+    {
+        if(!empty($_FILES['uploadedfile'])) {
+
+            if(($_FILES['uploadedfile']['type'] == 'application/pdf') AND ($_FILES['uploadedfile']['size'] < 1000001))  {
+                $targetPath = "public/CV/";
+                $targetPath = $targetPath . basename( $_FILES['uploadedfile']['name']);
+
+                if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $targetPath)) {
+                    return $targetPath;
+                } else{
+                    $this->data['error'] =  "There was an error uploading the file, please try again!";
+                    return false;
+                }
+            } else {
+                $this->data['error'] =  "There are something wrong in type and size, please try again!";
+                return false;
+            }
+        }
+        return false;
     }
 }
