@@ -4,7 +4,9 @@
  * Description of Users
  *
  * @package     Model
- * @author      Eftakhairul Islam <eftakhairul@gmail.com> http://eftakhairul.com
+ * @author      Eftakhairul Islam <eftakhairul@gmail.com>
+ * @website     http://eftakhairul.com
+ * @copyright   Copyright (c) 2011 Eftakhairul Islam
  */
 
 class Jobs extends MY_Model
@@ -21,78 +23,56 @@ class Jobs extends MY_Model
             return false;
         }
 
-        $data['job_type'] = 1;
-        $data['user_id'] = $this->session->userdata('user_id');
         $data['create_date'] = date('Y-m-d');
-        $this->insert($data);
 
-        return $data['user_id'];
-
+        return $this->insert($data);
     }
 
-    public function validateUser($data)
+    public function countAll($userId = null)
     {
-        $data = $this->removeNonAttributeFields($data);
-        $data['password'] = md5($data['password']);
-        return $this->find($data, 'username, user_id');
-    }
-    
+        if(!empty($userId)) {
+            return $this->findCount("{$this->table}.user_id = {$userId}");
+        }
 
-    public function getAll($offset = 0)
-    {
-        $limit = $this->config->item('rowsPerPage');
-        $this->db->select();
-        $this->db->from($this->table);
-        $this->db->join('profiles', "profiles.{$this->primaryKey}={$this->table}.{$this->primaryKey}");
-        $this->db->join('user_types', "user_types.user_type_id={$this->table}.user_type_id");
-        $this->db->limit($limit, $offset);
-
-        return $this->db->get()->result_array();
-    }
-
-    public function countAllUsers()
-    {
         return $this->db->count_all("{$this->table}");
     }
 
-    public function getDetail($userId)
+    public function getAll($offset = 0, $userId = null)
     {
-        $this->db->select();
-        $this->db->from($this->table);
-        $this->db->join('profiles', "profiles.{$this->primaryKey}={$this->table}.{$this->primaryKey}");
-        $this->db->join('user_types', "user_types.user_type_id={$this->table}.user_type_id");
-        $this->db->where("{$this->table}.{$this->primaryKey}", $userId);
+        $limit = $this->config->item('rowsPerPage');
 
-        return $this->db->get()->row_array();
+        if(empty($userId)) {
+            return $this->findAll(null, '*', null, $offset, $limit);
+        } else {
+            return $this->findAll("user_id = {$userId}", '*', null, $offset, $limit);
+        }
     }
 
-    public function checkUsernameExisted($username)
+    public function getDetailsByJobsId($jobsId = null)
     {
-        $result = $this->find(array('username' => $username), $this->primaryKey);
-        return $result;
-    }
-
-    public function previousPasswordExisted($previous_password)
-    {
-        $previous_password = md5($previous_password);
-        $result = $this->find(array('password' => $previous_password), $this->primaryKey);
-        
-        return $result;
-    }
-
-    public function modify(array $data)
-    {
-        if(!empty($data['password'])){
-            $data['password'] = md5($data['password']);
+        if(empty($jobsId)) {
+            return false;
         }
 
-        return $this->update($data, $data['user_id']);
+        return $this->find("{$this->table}.{$this->primaryKey} = {$jobsId}");
     }
 
-    public function getUserTypes()
+    public function modify(array $data, $jobsId = null)
     {
-        $this->db->select('*');
-        $this->db->from('user_types');
-        return $this->db->get()->result_array();
+        if(empty($data) OR empty($jobsId)){
+            return false;
+        }
+
+        return $this->update($data, $jobsId);
+    }
+
+    public function delete($jobsId = null)
+    {
+        if(empty ($jobsId)) {
+            return false;
+        }
+
+        $this->remove($jobsId);
+        return true;
     }
 }

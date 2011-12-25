@@ -1,0 +1,160 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>Medical Job Portal</title>
+
+    <!--    @import url("http://local.rbs-exam.tld/css/style.css");-->
+        <style type="text/css" media="all">
+            @import url("http://local.rbs-exam.tld/assets/css/style.css");
+            @import url("http://local.rbs-exam.tld/assets/css/jquery.wysiwyg.css");
+            @import url("http://local.rbs-exam.tld/assets/css/facebox.css");
+            @import url("http://local.rbs-exam.tld/assets/css/visualize.css");
+            @import url("http://local.rbs-exam.tld/assets/css/date_input.css");
+        </style>
+
+        <!--[if lt IE 8]><style type="text/css" media="all">@import url("css/ie.css");</style><![endif]-->
+
+        <script type="text/javascript" src="http://local.rbs-exam.tld/assets/js/jquery.js"></script>
+        <script type="text/javascript" src="http://local.rbs-exam.tld/assets/js/jquery.img.preload.js"></script>
+        <script type="text/javascript" src="http://local.rbs-exam.tld/assets/js/jquery.filestyle.mini.js"></script>
+        <script type="text/javascript" src="http://local.rbs-exam.tld/assets/js/jquery.wysiwyg.js"></script>
+        <script type="text/javascript" src="http://local.rbs-exam.tld/assets/js/jquery.date_input.pack.js"></script>
+
+        <script type="text/javascript" src="http://local.rbs-exam.tld/assets/js/facebox.js"></script>
+        <script type="text/javascript" src="http://local.rbs-exam.tld/assets/js/excanvas.js"></script>
+        <script type="text/javascript" src="http://local.rbs-exam.tld/assets/js/jquery.visualize.js"></script>
+        <script type="text/javascript" src="http://local.rbs-exam.tld/assets/js/jquery.select_skin.js"></script>
+        <script type="text/javascript" src="http://local.rbs-exam.tld/assets/js/jquery.pngfix.js"></script>
+        <script type="text/javascript" src="http://local.rbs-exam.tld/assets/js/custom.js"></script>
+
+    </head>
+
+    <body>
+
+        <div id="hld">
+
+            <div class="wrapper">		<!-- wrapper begins -->
+
+                <div class="block">
+
+                    <div class="block_head">
+                        <h2>New Employer Account</h2>
+                    </div>
+
+                    <div class="block_content">
+
+                        <form action="" method="POST">
+							<fieldset>
+                                <legend>User Login Information</legend>
+
+                                <p>
+                                    <label for="username">Username: <span style="color:red">*</span></label>
+                                    <input type="text" class="text small" name="username" value=""/> [Manimum 6 Characters.]
+                                    <span class='note error'>
+                                                                            </span>
+                                </p>
+
+                                <p>
+                                    <label for="password">Password: <span style="color:red">*</span></label>
+
+                                    <input type="password" class="text small" name="password"
+                                                           value="" />
+                                    <span class='note error'>
+                                                                            </span>
+                                </p>
+
+                                <p>
+                                    <label for="confirm_password">Confirm Password: <span style="color:red">*</span></label>
+                                    <input type="password" class="text small" name="confirm_password"
+                                                           value="" />
+                                    <span class='note error'>
+
+                                                                            </span>
+                                </p>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <legend>Company Detail</legend>
+
+                                <p>
+                                    <label for="doctor_name">Doctor Name: <span style="color:red">*</span></label>
+                                    <input type="text" class="text" name="first_name"
+                                                           value="" />
+                                    <span class='note error'>
+                                                                            </span>
+                                </p>
+                                
+                                <p>
+                                    <label for="designation">Designation: <span style="color:red">*</span></label>
+
+                                    <input type="text" class="text" name="designation"
+                                                           value="" />
+                                    <span class='note error'>
+                                                                            </span>
+                                </p>
+                                
+                                <p>
+                                    <label for="company Name">Company Name: </label>
+
+                                    <input type="text" class="text" name="company Name"
+                                                           value="" />
+                                    <span class='note error'>
+                                                                            </span>
+                                </p>
+
+                                <p>
+                                    <label for="contact_address">Contact Address: <span style="color:red">*</span></label>
+
+                                    <input type="text" class="text" name="contact_address"
+                                                           value="" />
+                                    <span class='note error'>
+                                                                            </span>
+                                </p>
+                                <p>
+                                    <label for="contact_number">Contact Phone Number: <span style="color:red">*</span></label>
+                                    <input type="text" class="text" name="contact_number"
+                                                           value="" />
+                                    <span class='note error'>
+
+                                                                            </span>
+                                </p>
+
+                                <p>
+                                    <label for="email">Email Address: </label>
+                                    <input type="text" class="text" name="email"
+                                                           value="" />
+                                    <span class='note error'>
+
+                                                                            </span>
+                                </p>
+                                
+                                <p>
+                                    <label for="web_address">Web Address: </label>
+                                    <input type="text" class="text" name="web_address"
+                                                           value="" />
+                                    <span class='note error'>
+
+                                                                            </span>
+                                </p>                                
+                            </fieldset>                            
+
+                        <p>
+							<input type="checkbox" name="agree" value="yes" />&nbsp;I have read the terms and conditions & accept it. <br/>
+
+                            <input type="submit" value="Submit" class="submit small" />
+                        </p>
+
+                        </form>
+
+                    </div>		<!-- .block_content ends -->
+                </div>		<!-- .block ends -->
+
+            </div>						<!-- wrapper ends -->
+
+        </div>		<!-- #hld ends -->
+
+    </body>
+    </html>

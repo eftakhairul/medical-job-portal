@@ -14,6 +14,24 @@
         
         <form action="" method="POST">
             <p>
+               <label for="types">
+                   Job Types: <span class="required">*</span>
+               </label>
+
+               <select id="types" name="types" class="styled">
+                   <option value=''>- Select -</option>
+                   <?php foreach ($jobTypes AS $row) : ?>
+                       <option value="<?php echo $row['types'] ?>"
+                           <?php echo set_select('types', $row['types']) ?> >
+                           <?php echo $row['types'] ?></option>
+                   <?php endforeach ?>
+               </select>
+               <span class='note error'>
+                   <?php echo form_error('types') ?>
+               </span>
+           </p>
+
+            <p>
                 <label for="title">
                    Title: <span class="required">*</span>
                 </label>
@@ -34,8 +52,6 @@
                 <textarea id="description" name="description" rows="5" cols="50" class="wysiwyg" >
                     <?php echo set_value('description')?>
                 </textarea>
-
-                <br />
                 <span class='note error'>
                     <?php echo form_error('description') ?>
                 </span>
