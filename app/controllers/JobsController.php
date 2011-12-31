@@ -14,6 +14,7 @@ class JobsController extends BaseController
     public function __construct()
 	{
 		parent::__construct();
+
         $this->load->library('form_validation');
         $this->load->library('pagination');
         $this->load->model('jobs');
@@ -87,7 +88,7 @@ class JobsController extends BaseController
         } else {
             $this->load->model('jobboards');
             $this->jobboards->processApplication($data['id'], $this->userId);
-            $this->redirectForSuccess('Jobs', 'Applincation is accepted successfully');
+            $this->redirectForSuccess('home/applicantDeashboard', 'Applincation is accepted successfully');
         }
     }
 
@@ -95,6 +96,18 @@ class JobsController extends BaseController
     {
         $this->processPaginationForApplications();
         $this->layout->view('jobs/applications', $this->data);
+    }
+
+    public function appliedJobs()
+    {
+        $this->processPaginationForAppliedJobs();
+        $this->layout->view('jobs/applied-jobs', $this->data);
+    }
+
+    public function jobDetails($jobsId)
+    {
+        $this->data['jobs'] = $this->jobs->getDetailsByJobsId($jobsId);
+        $this->layout->view('jobs/jobs-details', $this->data);
     }
 
     public function delete()
@@ -114,9 +127,11 @@ class JobsController extends BaseController
 
         $url = site_url('jobs/index');
 
+
+
         $uriAssoc = $this->uri->uri_to_assoc();
         $page = empty ($uriAssoc['page']) ? 0 : $uriAssoc['page'];
-        $this->data['jobs'] = $this->jobs->getAll($page, $this->userId);
+        $this->data['jobs'] = $this->jobs->getAll($page, null);
 
         $paginationOptions = array(
             'baseUrl' => $url . '/page/',
@@ -140,6 +155,24 @@ class JobsController extends BaseController
             'baseUrl' => $url . '/page/',
             'segmentValue' => $this->uri->getSegmentIndex('page') + 1,
             'numRows' => $this->jobboards->countAllApplicants($this->userId)
+        );
+
+        $this->pagination->setOptions($paginationOptions);
+    }
+
+    private function processPaginationForAppliedJobs()
+    {
+        $this->load->model('jobboards');
+        $url = site_url('jobs/applications');
+
+        $uriAssoc = $this->uri->uri_to_assoc();
+        $page = empty ($uriAssoc['page']) ? 0 : $uriAssoc['page'];
+        $this->data['jobs'] = $this->jobboards->getAllAppliedJobs($page, $this->userId);
+
+        $paginationOptions = array(
+            'baseUrl' => $url . '/page/',
+            'segmentValue' => $this->uri->getSegmentIndex('page') + 1,
+            'numRows' => $this->jobboards->countAllAppliedJobs($this->userId)
         );
 
         $this->pagination->setOptions($paginationOptions);

@@ -1,7 +1,7 @@
 <div class="block">
 
     <div class="block_head">
-        <h2>All Published Jobs</h2>
+        <h2>User Management</h2>
     </div> <!--.block_head ends -->
     
     <div class="block_content">
@@ -12,8 +12,8 @@
 
                 <tr>
                     <th class="centered" >Sl.</th>                     
-                    <th class="centered" >Job Title</th>
-                    <th class="centered" >Jobs Type</th>
+                    <th class="centered" >User Name</th>
+                    <th class="centered" >Types</th>
                     <th class="centered" >Created Date</th>
                     <th class="centered" >Action</th>
                 </tr>
@@ -21,22 +21,21 @@
             </thead>
             
             <tbody>
-                <?php $cnt = 1; if (empty ($jobs)) : ?>
+                <?php $cnt = 1; if (empty ($users)) : ?>
 
                 <tr>
-                    <td colspan="5" class="nodatamsg">No number founds.</td>
+                    <td colspan="5" class="nodatamsg">No user founds.</td>
                 </tr>
 
-                <?php else : foreach($jobs AS $row) : ?>
+                <?php else : foreach($users AS $row) : ?>
 
                 <tr>
                     <td class="centered"><?php echo $cnt++; ?></td>
-                     <td class="centered"><a href="/jobs/jobDetails/<?php echo $row['job_id']?>" ><?php echo $row['title']; ?></a></td>
+                    <td class="centered"><?php echo $row['username']; ?></td>
                     <td class="centered"><?php echo $row['types']; ?></td>
                     <td class="centered"><?php echo DateHelper::mysqlToHuman($row['create_date']) ?></td>
                     <td class="centered">
-                        <a href="<?php echo site_url("jobs/edit/{$row['job_id']}") ?>">Edit</a>
-                        | <a href="<?php echo site_url("jobs/delete/id/{$row['job_id']}") ?>" id='delete'>Delete</a>
+                        <a href="<?php echo site_url("user/delete/id/{$row['user_id']}") ?>" id='delete'>Delete</a>
                     </td>
                 </tr>
 

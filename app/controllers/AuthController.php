@@ -38,7 +38,16 @@ class AuthController extends BaseController
                     $this->session->set_userdata('user_id', $result['user_id']);
                     $this->session->set_userdata('user_type', $result['types']);
 
-                    $this->redirectForSuccess('jobs/dashboard', 'You have successfully logged in.');
+                    $this->redirectForSuccess('jobs', 'You have successfully logged in.');
+
+                    if($result['types'] == APPLICANT) {
+                        $this->redirectForSuccess('home/applicantDeashboard', 'You have successfully logged in.');
+                    }
+
+                    if($result['types'] == EMPLOYER) {
+                        $this->redirectForSuccess('home/employerDeashboard', 'You have successfully logged in.');
+                    }
+
 
                 } else {
                     $this->data['error'] = 'Enter correct Username & Password.';

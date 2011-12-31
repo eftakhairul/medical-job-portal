@@ -23,7 +23,7 @@
                 <?php $cnt = 1; if (empty ($jobs)) : ?>
 
                 <tr>
-                    <td colspan="4" class="nodatamsg">No number founds.</td>
+                    <td colspan="4" class="nodatamsg">No application founds.</td>
                 </tr>
 
                 <?php else : foreach($jobs AS $row) : ?>

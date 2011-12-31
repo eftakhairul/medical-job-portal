@@ -38,19 +38,55 @@
 
                 <div id="header">
 
-                    <h1><a href="<?php echo site_url('backupurl') ?>">Medical Jobs Portal</a></h1>
+                    <h1><a href="#">Medical Jobs Portal</a></h1>
+
                     <ul id="nav">
-                        <li class="active"><a href="<?php echo site_url('jobs/dashboard') ?>">Home</a></li>
-<!--                        <li class="active"><a href="--><?php //echo site_url('backupurl') ?><!--">Backup</a>-->
-<!--                            <ul>-->
-<!--                                <li><a href="">View Schedule</a></li>-->
-<!--                                <li><a href="">Create Event</a></li>-->
-<!--                            </ul>-->
-<!--                        </li>-->
-                        <li class="active"><a href="#">Account Setting</a>
+                        <?php if($this->session->userdata('user_type') == ADMIN): ?>
+                        <li class="active"><a href="<?php echo site_url('jobs/admin-deashboard') ?>">Home</a></li>
+                        <?php endif;?>
+
+                        <?php if($this->session->userdata('user_type') == EMPLOYER): ?>
+                        <li class="active"><a href="<?php echo site_url('home/employerDeashboard') ?>">Home</a></li>
+                        <?php endif;?>
+
+                        <?php if($this->session->userdata('user_type') == APPLICANT): ?>
+                        <li class="active"><a href="<?php echo site_url('home/applicantDeashboard') ?>">Home</a></li>
+                        <?php endif;?>
+
+                        <?php if($this->session->userdata('user_type') == ADMIN): ?>
+                        <li class="active"><a href="<?php echo site_url('user/index') ?>">User Management</a></li>
+                        <?php endif;?>
+
+                        <?php if($this->session->userdata('user_type') == EMPLOYER): ?>
+                        <li class="active"><a href="<?php echo site_url('jobs') ?>">Jobs</a>
                             <ul>
-                                <li><a href="">Change Profile</a></li>
-                                <li><a href="">Chnage Password </a></li>
+                                <li><a href="<?php echo site_url('jobs') ?>">View Jobs</a></li>
+                                <li><a href="<?php echo site_url('jobs/create') ?>">Create Jobs</a></li>
+                            </ul>
+                        </li>
+                        <?php endif;?>
+
+
+                        <?php if($this->session->userdata('user_type') == EMPLOYER): ?>
+                        <li class="active"><a href="<?php echo site_url('jobs/applications') ?>">Applicatons </a>
+                        <?php endif;?>
+
+                        <?php if($this->session->userdata('user_type') == APPLICANT): ?>
+                        <li class="active"><a href="<?php echo site_url('jobs/appliedJobs') ?>">Applied Jobs </a>
+                        <?php endif;?>
+
+                        <?php if($this->session->userdata('user_type') == APPLICANT): ?>
+                        <li class="active"><a href="<?php echo site_url('applicant/updateCV') ?>">Upload CV</a>
+                        <?php endif;?>
+
+                        <li class="active"><a href="<?php echo site_url('applicant/editApplicant') ?>">Account Setting</a>
+                            <ul>
+                                <?php if($this->session->userdata('user_type') == APPLICANT): ?>
+                                <li><a href=<?php echo site_url('applicant/editApplicant') ?>> Edit Profile</a></li>
+                                <?php endif; if($this->session->userdata('user_type') == EMPLOYER): ?>
+                                <li><a href=<?php echo site_url('schedule/createSchedule') ?>> Edit Profile</a></li>
+                                <? endif;?>
+                                <li><a href="<?php echo site_url('auth/changePassword'); ?>" >Chnage Password </a></li>
                             </ul>
                         </li>
 

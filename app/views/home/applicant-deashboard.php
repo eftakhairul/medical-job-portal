@@ -31,7 +31,7 @@
 
                 <tr>
                     <td class="centered"><?php echo $cnt++; ?></td>
-                    <td class="centered"><?php echo $row['title']; ?></td>
+                    <td class="centered"><a href="/jobs/jobDetails/<?php echo $row['job_id']?>" ><?php echo $row['title']; ?></a></td>
                     <td class="centered"><?php echo $row['types']; ?></td>
                     <td class="centered"><?php echo DateHelper::mysqlToHuman($row['create_date']) ?></td>
                     <td class="centered">

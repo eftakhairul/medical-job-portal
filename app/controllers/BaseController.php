@@ -63,12 +63,12 @@ abstract class BaseController extends CI_Controller
 
         protected function prepareLogin()
         {
-            if (!$this->session->userdata('userName')) {
+            if (!$this->session->userdata('usermame')) {
                 redirect('auth/login');
              }
         }
 
-        protected function _checkAdmin()
+        protected function checkAdmin()
         {
             if ($this->session->userdata('userType') != ADMIN) {
 

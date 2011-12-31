@@ -24,14 +24,14 @@
                 <?php $cnt = 1; if (empty ($jobs)) : ?>
 
                 <tr>
-                    <td colspan="5" class="nodatamsg">No number founds.</td>
+                    <td colspan="5" class="nodatamsg">No jobs founds.</td>
                 </tr>
 
                 <?php else : foreach($jobs AS $row) : ?>
 
                 <tr>
                     <td class="centered"><?php echo $cnt++; ?></td>
-                    <td class="centered"><?php echo $row['title']; ?></td>
+                     <td class="centered"><a href="/jobs/jobDetails/<?php echo $row['job_id']?>" ><?php echo $row['title']; ?></a></td>
                     <td class="centered"><?php echo $row['types']; ?></td>
                     <td class="centered"><?php echo DateHelper::mysqlToHuman($row['create_date']) ?></td>
                     <td class="centered">

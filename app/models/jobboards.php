@@ -77,4 +77,48 @@ class JobBoards extends MY_Model
 
         return $result;
     }
+
+    public function countAllAppliedJobs($applicantId = null)
+    {
+        if(empty($applicantId)) {
+            return false;
+        }
+
+        $sql = "SELECT COUNT(job_board_id) AS total
+                FROM  `job_boards`
+                WHERE `applicant_id` = '{$applicantId}'";
+
+        $result = $this->db->query($sql)->row_array();
+
+        if(empty($result)) {
+            return 0;
+        }
+
+        return $result['total'];
+    }
+
+    public function getAllAppliedJobs($offset=0, $applicantId = null)
+    {
+        if(empty($applicantId)) {
+                return false;
+            }
+
+        $limit = $this->config->item('rowsPerPage');
+
+        $sql = "SELECT `jobs`.*, {$this->table}.`create_date` AS application_date
+                FROM  {$this->table}
+                Join `jobs` ON `jobs`.`job_id` = {$this->table}.`job_id`
+                WHERE `applicant_id` = '{$applicantId}'
+                LIMIT $offset, {$limit}";
+
+        $result =  $this->db->query($sql)->result_array();
+
+        if(empty($result)) {
+            return false;
+        }
+
+        return $result;
+    }
+
+
 }

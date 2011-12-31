@@ -1,7 +1,7 @@
 <div class="block">
 
     <div class="block_head">
-        <h2>All Published Jobs</h2>
+        <h2>You Applied Jobs</h2>
     </div> <!--.block_head ends -->
     
     <div class="block_content">
@@ -12,10 +12,9 @@
 
                 <tr>
                     <th class="centered" >Sl.</th>                     
-                    <th class="centered" >Job Title</th>
-                    <th class="centered" >Jobs Type</th>
-                    <th class="centered" >Created Date</th>
-                    <th class="centered" >Action</th>
+                    <th class="centered" >Jobs Name </th>
+                    <th class="centered" >Type</th>
+                    <th class="centered" >Applicantion Date</th>
                 </tr>
 
             </thead>
@@ -24,7 +23,7 @@
                 <?php $cnt = 1; if (empty ($jobs)) : ?>
 
                 <tr>
-                    <td colspan="5" class="nodatamsg">No number founds.</td>
+                    <td colspan="4" class="nodatamsg">You didn't apply any jobs</td>
                 </tr>
 
                 <?php else : foreach($jobs AS $row) : ?>
@@ -33,11 +32,7 @@
                     <td class="centered"><?php echo $cnt++; ?></td>
                      <td class="centered"><a href="/jobs/jobDetails/<?php echo $row['job_id']?>" ><?php echo $row['title']; ?></a></td>
                     <td class="centered"><?php echo $row['types']; ?></td>
-                    <td class="centered"><?php echo DateHelper::mysqlToHuman($row['create_date']) ?></td>
-                    <td class="centered">
-                        <a href="<?php echo site_url("jobs/edit/{$row['job_id']}") ?>">Edit</a>
-                        | <a href="<?php echo site_url("jobs/delete/id/{$row['job_id']}") ?>" id='delete'>Delete</a>
-                    </td>
+                    <td class="centered"><?php echo DateHelper::mysqlToHuman($row['application_date']) ?></td>
                 </tr>
 
                 <?php endforeach; endif ?>

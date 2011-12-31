@@ -12,6 +12,7 @@ class ApplicantController extends BaseController
     public function __construct()
 	{
 		parent::__construct();
+        $this->prepareLogin();
         $this->load->model('applicants');
         $this->load->library('form_validation');
     }
