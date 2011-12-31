@@ -14,7 +14,7 @@
                     <th class="centered" >Sl.</th>                     
                     <th class="centered" >User Name</th>
                     <th class="centered" >Types</th>
-                    <th class="centered" >Created Date</th>
+                    <th class="centered" >Joined Date</th>
                     <th class="centered" >Action</th>
                 </tr>
 
@@ -33,7 +33,7 @@
                     <td class="centered"><?php echo $cnt++; ?></td>
                     <td class="centered"><?php echo $row['username']; ?></td>
                     <td class="centered"><?php echo $row['types']; ?></td>
-                    <td class="centered"><?php echo DateHelper::mysqlToHuman($row['create_date']) ?></td>
+                    <td class="centered"><?php echo DateHelper::mysqlToHuman($row['created_date']) ?></td>
                     <td class="centered">
                         <a href="<?php echo site_url("user/delete/id/{$row['user_id']}") ?>" id='delete'>Delete</a>
                     </td>

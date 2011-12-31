@@ -13,6 +13,7 @@ class AuthController extends BaseController
 	public function __construct()
 	{
 		parent::__construct();
+
 		$this->load->model('users');
         $this->load->library('form_validation');
 	}
@@ -69,7 +70,6 @@ class AuthController extends BaseController
 
     public function changePassword()
 	{
-        $this->prepareLogin();
         $this->form_validation->setRulesForChangePassword();
 
 		if (!empty($_POST)) {

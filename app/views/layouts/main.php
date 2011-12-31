@@ -42,7 +42,7 @@
 
                     <ul id="nav">
                         <?php if($this->session->userdata('user_type') == ADMIN): ?>
-                        <li class="active"><a href="<?php echo site_url('jobs/admin-deashboard') ?>">Home</a></li>
+                        <li class="active"><a href="<?php echo site_url('home/adminDeashboard') ?>">Home</a></li>
                         <?php endif;?>
 
                         <?php if($this->session->userdata('user_type') == EMPLOYER): ?>
@@ -79,14 +79,25 @@
                         <li class="active"><a href="<?php echo site_url('applicant/updateCV') ?>">Upload CV</a>
                         <?php endif;?>
 
+
+                        <?php if($this->session->userdata('user_type') == ADMIN): ?>
+                        <li class="active"><a href="<?php echo site_url('auth/changePassword') ?>">Account Setting</a>
+                        <?php endif; ?>
+
+                        <?php if($this->session->userdata('user_type') == APPLICANT): ?>
                         <li class="active"><a href="<?php echo site_url('applicant/editApplicant') ?>">Account Setting</a>
+                        <?php endif; ?>
+
+                        <?php if($this->session->userdata('user_type') == EMPLOYER): ?>
+                        <li class="active"><a href="<?php echo site_url('employer/editEmployer') ?>">Account Setting</a>
+                        <?php endif; ?>
                             <ul>
                                 <?php if($this->session->userdata('user_type') == APPLICANT): ?>
                                 <li><a href=<?php echo site_url('applicant/editApplicant') ?>> Edit Profile</a></li>
                                 <?php endif; if($this->session->userdata('user_type') == EMPLOYER): ?>
-                                <li><a href=<?php echo site_url('schedule/createSchedule') ?>> Edit Profile</a></li>
+                                <li><a href=<?php echo site_url('employer/editEmployer') ?>> Edit Profile</a></li>
                                 <? endif;?>
-                                <li><a href="<?php echo site_url('auth/changePassword'); ?>" >Chnage Password </a></li>
+                                <li><a href="<?php echo site_url('auth/changePassword'); ?>" >Change Password </a></li>
                             </ul>
                         </li>
 

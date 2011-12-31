@@ -17,6 +17,11 @@ class JobBoards extends MY_Model
         $this->loadTable('job_boards', 'job_board_id');
     }
 
+    public function countAll()
+    {
+        return $this->db->count_all("{$this->table}");
+    }
+
     public function processApplication($jobsId = null, $applicantId = null)
     {
         if(empty($jobsId) OR empty($applicantId)) {
@@ -119,6 +124,4 @@ class JobBoards extends MY_Model
 
         return $result;
     }
-
-
 }

@@ -15,9 +15,9 @@ class HomeController extends BaseController
     public function __construct()
 	{
 		parent::__construct();
+
         $this->load->model('jobs');
         $this->load->library('pagination');
-
         $this->userId = $this->session->userdata('user_id');
 	}
 
@@ -40,7 +40,15 @@ class HomeController extends BaseController
 
     public function adminDeashboard()
     {
-        $this->layout->view('home/admin-deashboard');
+        $this->load->model('users');
+        $this->load->model('applicants');
+        $this->load->model('jobboards');
+
+        $this->data['jobs']         = $this->jobs->countAll();
+        $this->data['users']        = $this->users->countAll();
+        $this->data['applications'] = $this->jobboards->countAll();
+
+        $this->layout->view('home/admin-deashboard', $this->data);
     }
 
     private function processPagination()

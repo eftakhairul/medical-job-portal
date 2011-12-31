@@ -12,7 +12,7 @@ class ApplicantController extends BaseController
     public function __construct()
 	{
 		parent::__construct();
-        $this->prepareLogin();
+
         $this->load->model('applicants');
         $this->load->library('form_validation');
     }
@@ -46,12 +46,13 @@ class ApplicantController extends BaseController
     public function updateCV()
     {
         $applicantId = $this->session->userdata('user_id');
+        $data = array();
 
         if (!empty ($_POST)){
 
             if($data['cv'] = $this->applicantCVUpload()){
-                if ($this->applicants->modify($data['cv'], $applicantId)) {
-                    $this->redirectForSuccess('home/applicant-dashboard', 'Your information has been updated successfully');
+                if ($this->applicants->modify($data, $applicantId)) {
+                    $this->redirectForSuccess('home/applicantDeashboard', 'Your information has been updated successfully');
                }
             } else {
                 $this->redirectForFailure('applicant/updateCV' ,"Please upload your CV correctly");

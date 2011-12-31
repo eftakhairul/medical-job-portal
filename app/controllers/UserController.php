@@ -1,4 +1,4 @@
-<?php 
+s<?php
 /**
  * Description of User Controller
  *
@@ -16,9 +16,8 @@ class UserController extends BaseController
     public function __construct()
 	{
 		parent::__construct();
-        $this->prepareLogin();
+
         $this->load->model('users');
-        $this->prepareLogin();
     }
 
     public function index()
@@ -41,11 +40,12 @@ class UserController extends BaseController
 
     private function processPagination()
     {
+        $this->load->library('pagination');
         $url = site_url('user/index');
 
         $uriAssoc = $this->uri->uri_to_assoc();
         $page = empty ($uriAssoc['page']) ? 0 : $uriAssoc['page'];
-        $this->data['user'] = $this->users->getAll($page);
+        $this->data['users'] = $this->users->getAll($page);
 
         $paginationOptions = array(
             'baseUrl' => $url . '/page/',
