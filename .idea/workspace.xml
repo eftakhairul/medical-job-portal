@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cfd1e63-bb64-4442-92be-5d1c886df2e7" name="Default" comment="Medical Jobs Portal second version done">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitignore" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Medical-Job-Portal.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/CV/2011-12-09 IDTF Coding Requirements - v3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/CV/eftakhairul_restfull_webservice.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/CV/u&amp;td1(www.songs.pk).mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/eftakhairul_restfull_webservice.pdf" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="5e1c74f3-04fb-4860-9cdd-3f4c4f492a96" name="Rejected commit: Default" comment="Medical Jobs Portal second version done" />
@@ -214,39 +219,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="uploads" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Medical-Job-Portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Medical-Job-Portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Medical-Job-Portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Medical-Job-Portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CV" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
