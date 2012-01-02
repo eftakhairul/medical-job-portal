@@ -28,7 +28,8 @@ class Applicants extends MY_Model
 
         $user = array(
           'username' =>  $data['username'],
-          'types'    => APPLICANT
+          'types'    => APPLICANT,
+          'password' => $data['password']
         );
 
         $data['user_id'] = $CI->users->save($user);

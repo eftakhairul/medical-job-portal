@@ -121,10 +121,15 @@
                       </span>
                   </p>
 
-                  <p class='fileupload'>
-                      <label >Upload Your CV:
+                  <p>
+                      <label >Upload Your CV:<span style="color:red">*</span>
+                      </label>
                       </label>
                       <input name="uploadedfile" type="file" />
+
+                      <span class='note error'>
+                         <?php echo form_error('uploadedfile'); ?>
+                      </span>
                   </p>
 
 

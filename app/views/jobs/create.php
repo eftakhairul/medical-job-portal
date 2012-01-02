@@ -7,23 +7,35 @@
     <?php endif ?>
 
     <div class="block_head">
-        <h2>Create New Message</h2>
+        <h2>Create New Jobs</h2>
     </div>
 
     <div class="block_content">
         
-        <form action="" method="POST">
+        <form action="" method="POST"
             <p>
                <label for="types">
-                   Job Types: <span class="required">*</span>
+                   Job Categories: <span class="required">*</span>
                </label>
 
                <select id="types" name="types" class="styled">
                    <option value=''>- Select -</option>
+                   <optgroup label="ADMIN">
+                       <?php foreach ($jobTypes AS $row) : ?>
+                       <?php if( in_array($row['types'], array('parients care','accounts')) ):  ?>
+                           <option value="<?php echo $row['types'] ?>"
+                               <?php echo set_select('types', $row['types']) ?> >
+                               <?php echo strtoupper($row['types']) ?>
+                           </option>
+                        <?php endif; ?>
+                        <?php endforeach ?>
+                   </optgroup>
                    <?php foreach ($jobTypes AS $row) : ?>
+                   <?php if( !in_array($row['types'], array('parients care','accounts')) ):  ?>
                        <option value="<?php echo $row['types'] ?>"
                            <?php echo set_select('types', $row['types']) ?> >
-                           <?php echo $row['types'] ?></option>
+                           <?php echo strtoupper($row['types']) ?></option>
+                   <?php endif; ?>
                    <?php endforeach ?>
                </select>
                <span class='note error'>

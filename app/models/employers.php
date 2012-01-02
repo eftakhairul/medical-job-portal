@@ -27,7 +27,8 @@ class Employers extends MY_Model
 
         $user = array(
           'username'    => $data['username'],
-          'types'       => EMPLOYER
+          'types'       => EMPLOYER,
+          'password'    => $data['password']
         );
 
         $data['user_id'] = $CI->users->save($user);

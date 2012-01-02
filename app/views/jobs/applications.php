@@ -1,7 +1,7 @@
 <div class="block">
 
     <div class="block_head">
-        <h2>All Published Jobs</h2>
+        <h2>All Submitted CVs</h2>
     </div> <!--.block_head ends -->
     
     <div class="block_content">
@@ -12,9 +12,9 @@
 
                 <tr>
                     <th class="centered" >Sl.</th>                     
-                    <th class="centered" >Applincat's Name </th>
+                    <th class="centered" >Applicant's Name </th>
                     <th class="centered" >CV</th>
-                    <th class="centered" >Applicantion Date</th>
+                    <th class="centered" >Application Submission Date</th>
                 </tr>
 
             </thead>

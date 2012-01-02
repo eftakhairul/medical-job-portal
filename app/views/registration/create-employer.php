@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+    <head>
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -28,21 +28,21 @@
         <script type="text/javascript" src="<?php echo site_url('assets/js/jquery.pngfix.js') ?>"></script>
         <script type="text/javascript" src="<?php echo site_url('assets/js/custom.js') ?>"></script>
     </head>
-<body>
+    <body>
 
-    <div id="hld">
+        <div id="hld">
 
-        <div class="wrapper">		<!-- wrapper begins -->
-<div class="block">
-    <?php if (!empty($errorMessage)) : ?>
-          <div class="message errormsg">
-              <?php echo $errorMessage ?>
-          </div>
-          <?php endif ?>
+            <div class="wrapper">		<!-- wrapper begins -->
+               <div class="block">
+                <?php if (!empty($errorMessage)) : ?>
+                  <div class="message errormsg">
+                      <?php echo $errorMessage ?>
+                  </div>
+                <?php endif ?>
 
-      <div class="block_head">
-          <h2>New Employer Account</h2>
-      </div>
+              <div class="block_head">
+                  <h2>New Employer Account</h2>
+              </div>
 
       <div class="block_content">
 
@@ -54,7 +54,7 @@
                       <label for="username">Username: <span style="color:red">*</span>
                       </label>
 
-                      <input type="text" class="text small" name="username" value="<?php echo set_value('title'); ?>"/>
+                      <input type="text" class="text small" name="username" value="<?php echo set_value('username'); ?>"/>
                       <span class='note error'>
                          <?php echo form_error('username'); ?>
                      </span>
@@ -147,10 +147,10 @@
           </form>
 
       </div>		<!-- .block_content ends -->
-  </div>		<!-- .block ends -->
-        </div>						<!-- wrapper ends -->
+    </div>		<!-- .block ends -->
+            </div>						<!-- wrapper ends -->
 
-               </div>		<!-- #hld ends -->
+        </div>		<!-- #hld ends -->
 
-           </body>
-           </html>
+    </body>
+</html>

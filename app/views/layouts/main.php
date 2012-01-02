@@ -68,7 +68,7 @@
 
 
                         <?php if($this->session->userdata('user_type') == EMPLOYER): ?>
-                        <li class="active"><a href="<?php echo site_url('jobs/applications') ?>">Applicatons </a>
+                        <li class="active"><a href="<?php echo site_url('jobs/applications') ?>">Received CVs </a>
                         <?php endif;?>
 
                         <?php if($this->session->userdata('user_type') == APPLICANT): ?>

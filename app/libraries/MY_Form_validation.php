@@ -54,7 +54,7 @@ class MY_Form_validation extends CI_Form_validation
             array(
                 'field' => 'email',
                 'label' => 'Email address',
-                'rules' => 'valid_email'
+                'rules' => 'valid_email|required'
             ),
             array(
                 'field' => 'address',
@@ -82,7 +82,7 @@ class MY_Form_validation extends CI_Form_validation
             array(
                 'field' => 'email',
                 'label' => 'Email address',
-                'rules' => 'valid_email'
+                'rules' => 'valid_email|required'
             ),
             array(
                 'field' => 'address',
@@ -92,6 +92,11 @@ class MY_Form_validation extends CI_Form_validation
             array(
                 'field' => 'contact_number',
                 'label' => 'Contact phone number',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'uploadedfile',
+                'label' => 'CV',
                 'rules' => 'required'
             )
         );

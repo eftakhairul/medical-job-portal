@@ -89,6 +89,8 @@ class RegistrationController extends BaseController
                 return false;
             }
         }
+
         return true;
     }
+
 }

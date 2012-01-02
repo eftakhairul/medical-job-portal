@@ -51,7 +51,7 @@ abstract class BaseController extends CI_Controller
             redirect($redirectLink);
         }
 
-        protected function username_check($username)
+        public function username_check($username)
         {
             $this->load->model('users');
             if(!$this->users->checkUsernameExisted($username)){

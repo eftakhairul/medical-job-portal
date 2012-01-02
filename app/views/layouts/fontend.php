@@ -1,3 +1,15 @@
+<?php
+///* Short and sweet */
+//define('WP_USE_THEMES', false);
+//
+//require(BASEPATH . '../blog/wp-load.php');
+//query_posts('showposts=3');
+//?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -113,6 +125,26 @@
                 <div class="clear"></div>
 
         </div>
+
+<!--        <div class="grid_4 push_1 featured-blog">-->
+<!---->
+<!--            <h2>Medical News</h2>-->
+<!---->
+<!--            <div class="posts">-->
+<!---->
+<!--                --><?php //while (have_posts()): the_post(); ?>
+<!--                <div class="post">-->
+<!--                    <h3>--><?php //the_title(); ?><!--</h3>-->
+                    <p><?php the_excerpt(); ?></p>
+                    <span class="meta"><a href="<?php the_permalink(); ?>">Read more...</a></span>
+<!--                </div>-->
+<!--                --><?php //endwhile; ?>
+<!---->
+<!--            </div>-->
+<!---->
+<!--        </div>-->
+
+
 
         <div class="container_12" id="footerarea">
             <div class="container_12">
