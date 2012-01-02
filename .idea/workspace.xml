@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cfd1e63-bb64-4442-92be-5d1c886df2e7" name="Default" comment="Medical Jobs Portal second version done">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitignore" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Medical-Job-Portal.zip" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/CV/2011-12-09 IDTF Coding Requirements - v3.pdf" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/CV/eftakhairul_restfull_webservice.pdf" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/CV/u&amp;td1(www.songs.pk).mp3" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/eftakhairul_restfull_webservice.pdf" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/schema/basic.sql" afterPath="$PROJECT_DIR$/app/schema/basic.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/schema/data.sql" afterPath="$PROJECT_DIR$/app/schema/data.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/schema/log.sql" afterPath="$PROJECT_DIR$/app/schema/log.sql" />
     </list>
     <list id="5e1c74f3-04fb-4860-9cdd-3f4c4f492a96" name="Rejected commit: Default" comment="Medical Jobs Portal second version done" />
     <ignored path="Medical-Job-Portal.iws" />
@@ -31,24 +31,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="employers.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/employers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="62" selection-start="951" selection-end="951" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit-employer.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/employer/edit-employer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="49" selection-start="2601" selection-end="2601" vertical-scroll-proportion="-12.384615">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="applicants.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/applicants.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -80,10 +62,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="104" selection-start="4476" selection-end="4476" vertical-scroll-proportion="0.9332024">
+            <state line="78" column="104" selection-start="4476" selection-end="4476" vertical-scroll-proportion="-18.26923">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="basic.sql" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/schema/basic.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="12" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0317757">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/schema/log.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="2" selection-start="0" selection-end="3520" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/schema/data.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="18" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -116,15 +125,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create-employer.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/registration/create-employer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="125" selection-start="6948" selection-end="6948" vertical-scroll-proportion="-15.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -140,9 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/RegistrationController.php" />
-        <option value="$PROJECT_DIR$/app/views/jobs/applications.php" />
-        <option value="$PROJECT_DIR$/app/views/jobs/create.php" />
         <option value="$PROJECT_DIR$/app/views/jobs/edit.php" />
         <option value="$PROJECT_DIR$/app/controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/app/views/applicant/edit-applicant.php" />
@@ -156,6 +153,9 @@
         <option value="$PROJECT_DIR$/app/controllers/ApplicantController.php" />
         <option value="$PROJECT_DIR$/app/views/applicant/update-cv.php" />
         <option value="$PROJECT_DIR$/app/views/layouts/main.php" />
+        <option value="$PROJECT_DIR$/app/schema/log.sql" />
+        <option value="$PROJECT_DIR$/app/schema/data.sql" />
+        <option value="$PROJECT_DIR$/app/schema/basic.sql" />
       </list>
     </option>
   </component>
@@ -219,7 +219,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Medical-Job-Portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Medical-Job-Portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="schema" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -384,27 +402,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/RegistrationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="30" selection-start="1482" selection-end="1482" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="8" selection-start="551" selection-end="588" vertical-scroll-proportion="0.80656934">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/core/MY_Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="20" selection-start="1120" selection-end="1120" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="38" selection-start="601" selection-end="619" vertical-scroll-proportion="0.0">
@@ -495,7 +492,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="104" selection-start="4476" selection-end="4476" vertical-scroll-proportion="0.9332024">
+        <state line="78" column="104" selection-start="4476" selection-end="4476" vertical-scroll-proportion="-18.26923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/schema/data.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="18" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/schema/log.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="2" selection-start="0" selection-end="3520" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/schema/basic.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="12" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0317757">
           <folding />
         </state>
       </provider>
