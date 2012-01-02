@@ -32,7 +32,7 @@
 
           <p>
               <label for="company Name">Company Name: </label>
-              <input type="text" class="text" name="company Name" value="<?php echo $employer['company_name']; ?>" />
+              <input type="text" class="text" name="company_name" value="<?php echo $employer['company_name']; ?>" />
           </p>
 
           <p>
@@ -67,8 +67,7 @@
           </p>
 
           <p>
-               <input type="checkbox" name="agree" value="yes" />&nbsp;I have read the terms and conditions & accept it. <br/>
-               <input type="submit" value="Submit" class="submit small" />
+               <input type="submit" value="Update" class="submit small" />
           </p>
 
       </form>

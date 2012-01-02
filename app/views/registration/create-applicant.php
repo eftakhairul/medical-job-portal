@@ -87,10 +87,10 @@
                   <legend>Personal Information</legend>
 
                   <p>
-                      <label for="full_name">Full Name: <span style="color:red">*</span></label>
-                      <input type="text" class="text" name="full_name" value="<?php echo set_value('full_name'); ?>" />
+                      <label for="name">Full Name: <span style="color:red">*</span></label>
+                      <input type="text" class="text" name="name" value="<?php echo set_value('name'); ?>" />
                       <span class='note error'>
-                         <?php echo form_error('full_name'); ?>
+                         <?php echo form_error('name'); ?>
                      </span>
                   </p>
 
@@ -104,11 +104,11 @@
                   </p>
 
                   <p>
-                      <label for="contact_number">Contact Phone Number: <span style="color:red">*</span>
+                      <label for="contact_no">Contact Number: <span style="color:red">*</span>
                       </label>
-                      <input type="text" class="text" name="contact_number" value="<?php echo set_value('contact_number'); ?>" />
+                      <input type="text" class="text" name="contact_no" value="<?php echo set_value('contact_no'); ?>" />
                       <span class='note error'>
-                         <?php echo form_error('contact_number'); ?>
+                         <?php echo form_error('contact_no'); ?>
                       </span>
                   </p>
 
@@ -124,7 +124,7 @@
                   <p>
                       <label >Upload Your CV:<span style="color:red">*</span>
                       </label>
-                      </label>
+
                       <input name="uploadedfile" type="file" />
 
                       <span class='note error'>

@@ -48,7 +48,7 @@ class MY_Form_validation extends CI_Form_validation
             ),
             array(
                 'field' => 'designation',
-                'label' => 'Dsignations',
+                'label' => 'Designations',
                 'rules' => 'required'
             ),
             array(
@@ -75,8 +75,8 @@ class MY_Form_validation extends CI_Form_validation
     {
         $config = array(
            array(
-                'field' => 'full_name',
-                'label' => 'Name',
+                'field' => 'name',
+                'label' => 'Full Name',
                 'rules' => 'required'
             ),
             array(
@@ -90,13 +90,8 @@ class MY_Form_validation extends CI_Form_validation
                 'rules' => 'required'
             ),
             array(
-                'field' => 'contact_number',
-                'label' => 'Contact phone number',
-                'rules' => 'required'
-            ),
-            array(
-                'field' => 'uploadedfile',
-                'label' => 'CV',
+                'field' => 'contact_no',
+                'label' => 'Contact number',
                 'rules' => 'required'
             )
         );

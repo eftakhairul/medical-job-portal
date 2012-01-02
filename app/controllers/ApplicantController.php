@@ -20,14 +20,17 @@ class ApplicantController extends BaseController
     public function editApplicant()
     {
         $applicantId = $this->session->userdata('user_id');
-        $this->form_validation->setRulesForCreateEmployer();
+        $this->form_validation->setRulesForCreateApplicant();
 
         if (!empty ($_POST)) {
 
+
            if ($this->form_validation->run()) {
 
+
+
                if ($result  = $this->applicants->modify($_POST, $applicantId)) {
-                    $this->redirectForSuccess('home/applicant-dashboard', 'Your information has been updated successfully');
+                    $this->redirectForSuccess('home/applicantDeashboard', 'Your information has been updated successfully');
                } else {
                    $this->data['error'] = 'Data is not save';
                }
@@ -59,6 +62,7 @@ class ApplicantController extends BaseController
             }
         }
 
+        $this->data['applicant'] = $this->applicants->getDetailsByApplicantId($applicantId);
         $this->layout->view('applicant/update-cv', $this->data);
     }
 

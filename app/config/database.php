@@ -69,9 +69,9 @@ $db['staging']['char_set'] = "utf8";
 $db['staging']['dbcollat'] = "utf8_unicode_ci";
 
 $db['production']['hostname'] = "localhost";
-$db['production']['username'] = "sakmah_mediport"; // Production Database Name
-$db['production']['password'] = "sakmah_medicalportal"; // Production Database User Password
-$db['production']['database'] = "04U+NhTUP]dl"; // Production Database Name
+$db['production']['username'] = "ishuvo12_root"; // Production Database Name
+$db['production']['password'] = "commonrbs"; // Production Database User Password
+$db['production']['database'] = "ishuvo12_medical"; // Production Database Name
 $db['production']['dbdriver'] = "mysql";
 $db['production']['dbprefix'] = "";
 $db['production']['pconnect'] = TRUE;

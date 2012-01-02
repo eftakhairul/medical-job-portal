@@ -140,7 +140,7 @@
               </fieldset>
 
           <p>
-               <input type="checkbox" name="agree" value="yes" />&nbsp;I have read the terms and conditions & accept it. <br/>
+              <input type="checkbox" name="agree" value="yes" />&nbsp;I have read the terms and conditions & accept it. <br/>
                <input type="submit" value="Submit" class="submit small" />
           </p>
 

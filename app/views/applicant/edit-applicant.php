@@ -13,10 +13,10 @@
 
         <form action="" method="POST" >
             <p>
-                <label for="full_name">Full Name: <span style="color:red">*</span></label>
-                <input type="text" class="text" name="full_name" value="<?php echo $applicant['full_name']; ?>" />
+                <label for="name">Full Name: <span style="color:red">*</span></label>
+                <input type="text" class="text" name="name" value="<?php echo $applicant['name']; ?>" />
                 <span class='note error'>
-                   <?php echo form_error('full_name'); ?>
+                   <?php echo form_error('name'); ?>
                </span>
             </p>
 
@@ -30,11 +30,11 @@
             </p>
 
             <p>
-               <label for="contact_number">Contact Phone Number: <span style="color:red">*</span>
+               <label for="contact_no">Contact Number: <span style="color:red">*</span>
                </label>
-               <input type="text" class="text" name="contact_number" value="<?php echo $applicant['contact_number']; ?>" />
+               <input type="text" class="text" name="contact_no" value="<?php echo $applicant['contact_no']; ?>" />
                <span class='note error'>
-                 <?php echo form_error('contact_number'); ?>
+                 <?php echo form_error('contact_no'); ?>
                </span>
             </p>
 
@@ -48,7 +48,6 @@
             </p>
 
             <p>
-                 <input type="checkbox" name="agree" value="yes" />&nbsp;I have read the terms and conditions & accept it. <br/>
                  <input type="submit" value="Submit" class="submit small" />
             </p>
 

@@ -32,6 +32,8 @@ class Employers extends MY_Model
         );
 
         $data['user_id'] = $CI->users->save($user);
+        $data['create_date'] = date('Y-m-d');
+
         $this->insert($data);
         return $data['user_id'];
     }

@@ -11,10 +11,14 @@
 
       <div class="block_content">
 
+          <p>Current CV: <a href="<?php echo site_url($applicant['cv'])?>">Download Here</a></p>
+          <p>Last Update: <?php  echo (($applicant['create_date'] > $applicant['update_date'])? DateHelper::mysqlToHuman($applicant['create_date']):DateHelper::mysqlToHuman($applicant['update_date'] )); ?></p>
+          <br/>
+
           <form enctype="multipart/form-data" action="" method="POST" >
 
            <p class='fileupload'>
-              <label >Upload Your CV:
+              <label >Upload New CV:
               </label>
               <input name="uploadedfile" type="file" />
           </p>
@@ -22,6 +26,7 @@
           <p>
               <input type="hidden" name='nothing' value ='true'/>
               <input type="submit" value="Submit" class="submit small" />
+              <input type="button" value="Cancel" class="submit small" onclick="window.location='/home/applicantDeashboard'"/>
           </p>
 
           </form>

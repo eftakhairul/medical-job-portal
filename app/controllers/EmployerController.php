@@ -27,7 +27,7 @@ class EmployerController extends BaseController
            if ($this->form_validation->run()) {
 
                if ($result  = $this->employers->modify($_POST, $employerId)) {
-                    $this->redirectForSuccess('season', 'Your information has been updated successfully');
+                    $this->redirectForSuccess('home/employerDeashboard', 'Your information has been updated successfully');
                } else {
                    $this->data['error'] = 'Data is not save';
                }
@@ -37,7 +37,7 @@ class EmployerController extends BaseController
            }
 
        } else {
-          $this->data['employer'] = $this->employers->getDetailsByApplicantId($employerId);
+          $this->data['employer'] = $this->employers->getDetailsByEmployerId($employerId);
        }
 
         $this->layout->view('employer/edit-employer', $this->data);

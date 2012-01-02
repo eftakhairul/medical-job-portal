@@ -4,7 +4,7 @@ global $config;
 
 $config['server_local']         = array('local.medical-job-portal.tld'); //local server host name
 $config['server_staging']       = array(''); // staging server host name
-$config['server_production']    = array('howwebworks.net/'); // production server host name
+$config['server_production']    = array('app.ishuvo.com'); // production server host name
 
 function getCurrentServer() {
 

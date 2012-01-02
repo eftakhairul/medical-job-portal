@@ -76,7 +76,7 @@
                         <?php endif;?>
 
                         <?php if($this->session->userdata('user_type') == APPLICANT): ?>
-                        <li class="active"><a href="<?php echo site_url('applicant/updateCV') ?>">Upload CV</a>
+                        <li class="active"><a href="<?php echo site_url('applicant/updateCV') ?>">Update CV</a>
                         <?php endif;?>
 
 
