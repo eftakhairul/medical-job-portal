@@ -110,6 +110,14 @@ class JobsController extends BaseController
         $this->layout->view('jobs/jobs-details', $this->data);
     }
 
+    public function jobsByCategory($categoty)
+    {
+        $this->session->set_userdata('category', $categoty);
+        $this->processPaginationForJobsByCategory();
+
+        $this->layout->view('jobs/jobs-by-category', $this->data);
+    }
+
     public function delete()
     {
         $data = $this->uri->uri_to_assoc();
@@ -124,10 +132,7 @@ class JobsController extends BaseController
 
     private function processPagination()
     {
-
         $url = site_url('jobs/index');
-
-
 
         $uriAssoc = $this->uri->uri_to_assoc();
         $page = empty ($uriAssoc['page']) ? 0 : $uriAssoc['page'];
@@ -173,6 +178,23 @@ class JobsController extends BaseController
             'baseUrl' => $url . '/page/',
             'segmentValue' => $this->uri->getSegmentIndex('page') + 1,
             'numRows' => $this->jobboards->countAllAppliedJobs($this->userId)
+        );
+
+        $this->pagination->setOptions($paginationOptions);
+    }
+
+    private function processPaginationForJobsByCategory()
+    {
+        $url = site_url('jobs/jobsByCategory');
+
+        $uriAssoc = $this->uri->uri_to_assoc();
+        $page = empty ($uriAssoc['page']) ? 0 : $uriAssoc['page'];
+        $this->data['jobs'] = $this->jobs->getAllByJobsCategory($page);
+
+        $paginationOptions = array(
+            'baseUrl' => $url . '/page/',
+            'segmentValue' => $this->uri->getSegmentIndex('page') + 1,
+            'numRows' => $this->jobs->countAllByJobsCategory($this->userId)
         );
 
         $this->pagination->setOptions($paginationOptions);

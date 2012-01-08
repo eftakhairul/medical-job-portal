@@ -35,6 +35,7 @@
         <div id="hld">
 
             <div class="wrapper">		<!-- wrapper begins -->
+                <?php if($this->session->userdata('user_type')) : ?>
 
                 <div id="header">
 
@@ -109,6 +110,8 @@
                     </p>
 
                 </div>		<!-- #header ends -->
+
+                <?php endif ?>
 
                 <?php if (!empty($notification['message'])) : ?>
 

@@ -37,6 +37,17 @@ class Jobs extends MY_Model
         return $this->db->count_all("{$this->table}");
     }
 
+    public function countAllByJobsCategory()
+    {
+        $condition = "";
+
+        if(!$this->session->userdata('category')) {
+            $condition = "{$this->table}.types = {$this->session->userdata('category')}";
+        }
+
+        return $this->findCount($condition);
+    }
+
     public function countAllByApplicantId($applicantId = null)
     {
         if(empty($applicantId)) {
@@ -67,6 +78,18 @@ class Jobs extends MY_Model
         } else {
             return $this->findAll("user_id = {$userId}", '*', null, $offset, $limit);
         }
+    }
+
+    public function getAllByJobsCategory($offset = 0)
+    {
+        $condition = "";
+        $limit = $this->config->item('rowsPerPage');
+
+        if(!$this->session->userdata('category')) {
+            $condition = "{$this->table}.types = {$this->session->userdata('category')}";
+        }
+
+        return $this->findAll($condition, '*', null, $offset, $limit);
     }
 
     public function getAllByApplicantId($offset = 0, $applicantId = null)
