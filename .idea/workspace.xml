@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cfd1e63-bb64-4442-92be-5d1c886df2e7" name="Default" comment="Medical Jobs Portal second version done">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/jobs/jobs-by-category.php" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/design/signup.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/CV/2011-12-09 IDTF Coding Requirements - v3.pdf" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/CV/eftakhairul_restfull_webservice.pdf" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/CV/u&amp;td1(www.songs.pk).mp3" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/eftakhairul_restfull_webservice.pdf" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/JobsController.php" afterPath="$PROJECT_DIR$/app/controllers/JobsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/jobs.php" afterPath="$PROJECT_DIR$/app/models/jobs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/main.php" afterPath="$PROJECT_DIR$/app/views/layouts/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routes.php" afterPath="$PROJECT_DIR$/app/config/routes.php" />
     </list>
     <list id="5e1c74f3-04fb-4860-9cdd-3f4c4f492a96" name="Rejected commit: Default" comment="Medical Jobs Portal second version done" />
     <ignored path="Medical-Job-Portal.iws" />
@@ -61,10 +57,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="database.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="49" selection-start="3423" selection-end="3439" vertical-scroll-proportion="0.4920914">
+            <state line="63" column="34" selection-start="2995" selection-end="2995" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="36" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.6713533">
               <folding />
             </state>
           </provider>
@@ -85,7 +90,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/libraries/MY_Form_validation.php" />
         <option value="$PROJECT_DIR$/app/views/registration/create-applicant.php" />
         <option value="$PROJECT_DIR$/app/models/applicants.php" />
         <option value="$PROJECT_DIR$/app/models/employers.php" />
@@ -101,6 +105,7 @@
         <option value="$PROJECT_DIR$/app/models/jobs.php" />
         <option value="$PROJECT_DIR$/app/views/jobs/jobs-by-category.php" />
         <option value="$PROJECT_DIR$/app/views/layouts/main.php" />
+        <option value="$PROJECT_DIR$/app/config/routes.php" />
       </list>
     </option>
   </component>
@@ -207,24 +212,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Medical-Job-Portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Medical-Job-Portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -424,11 +411,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/employers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="62" selection-start="951" selection-end="951" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/applicants.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="45" selection-start="777" selection-end="814" vertical-scroll-proportion="0.0" />
@@ -505,7 +487,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="49" selection-start="3423" selection-end="3439" vertical-scroll-proportion="0.4920914">
+        <state line="63" column="34" selection-start="2995" selection-end="2995" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="36" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.6713533">
           <folding />
         </state>
       </provider>
