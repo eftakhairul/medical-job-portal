@@ -7,7 +7,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/CV/eftakhairul_restfull_webservice.pdf" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/CV/u&amp;td1(www.songs.pk).mp3" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/eftakhairul_restfull_webservice.pdf" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routes.php" afterPath="$PROJECT_DIR$/app/config/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/fontend.php" afterPath="$PROJECT_DIR$/app/views/layouts/fontend.php" />
     </list>
     <list id="5e1c74f3-04fb-4860-9cdd-3f4c4f492a96" name="Rejected commit: Default" comment="Medical Jobs Portal second version done" />
     <ignored path="Medical-Job-Portal.iws" />
@@ -66,10 +66,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="36" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.6713533">
+            <state line="40" column="36" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fontend.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/fontend.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="125" column="0" selection-start="3273" selection-end="4188" vertical-scroll-proportion="0.7433962">
               <folding />
             </state>
           </provider>
@@ -90,7 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/registration/create-applicant.php" />
         <option value="$PROJECT_DIR$/app/models/applicants.php" />
         <option value="$PROJECT_DIR$/app/models/employers.php" />
         <option value="$PROJECT_DIR$/app/controllers/EmployerController.php" />
@@ -106,6 +114,7 @@
         <option value="$PROJECT_DIR$/app/views/jobs/jobs-by-category.php" />
         <option value="$PROJECT_DIR$/app/views/layouts/main.php" />
         <option value="$PROJECT_DIR$/app/config/routes.php" />
+        <option value="$PROJECT_DIR$/app/views/layouts/fontend.php" />
       </list>
     </option>
   </component>
@@ -171,6 +180,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Medical-Job-Portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Medical-Job-Portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -212,42 +235,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Medical-Job-Portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Medical-Job-Portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Medical-Job-Portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Medical-Job-Portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -411,11 +398,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/applicants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="45" selection-start="777" selection-end="814" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/applicant/update-cv.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="14" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" />
@@ -494,7 +476,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="36" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.6713533">
+        <state line="40" column="36" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/fontend.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="125" column="0" selection-start="3273" selection-end="4188" vertical-scroll-proportion="0.7433962">
           <folding />
         </state>
       </provider>

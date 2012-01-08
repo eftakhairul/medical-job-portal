@@ -101,48 +101,28 @@
         </div>
         </div>
 
-                <div class="grid_2" id="rightside">
+        <div class="grid_2" id="rightside">
 
-                    <div class="sidebar1">MYJOBS</div>
+            <div class="sidebar1">MYJOBS</div>
 
-                      <div class='inner corners-all-lg'>
-                          <form id = "login-form"action="/auth/login" method = "post">
-                              <p><label for='email'>Username: </label><input type='text' name='username' id='email' class='corners-all' /></p>
-                                <p><label for='password'>Password: </label><input type='password' name='password' id='password' class='corners-all' /></p>
-                          </form>
+              <div class='inner corners-all-lg'>
+                  <form id = "login-form"action="/auth/login" method = "post">
+                      <p><label for='email'>Username: </label><input type='text' name='username' id='email' class='corners-all' /></p>
+                        <p><label for='password'>Password: </label><input type='password' name='password' id='password' class='corners-all' /></p>
+                  </form>
 
 
 
-                      </div>
-                      <div class='action'>
-                          <p align="right">  <input type='submit' class='submit' value='GO' onclick="document.forms['login-form'].submit();"/></p>
-                          <p align="right"> <a href='/app/forgotpassword.php' class='forgot'>Forgot password?</a></p>
+              </div>
+              <div class='action'>
+                  <p align="right">  <input type='submit' class='submit' value='GO' onclick="document.forms['login-form'].submit();"/></p>
+                  <p align="right"> <a href='/app/forgotpassword.php' class='forgot'>Forgot password?</a></p>
 
-                      </div>
-                </div>
-                <br/>
-
-                <div class="clear"></div>
-
+              </div>
         </div>
+        <br/>
 
-<!--        <div class="grid_4 push_1 featured-blog">-->
-<!---->
-<!--            <h2>Medical News</h2>-->
-<!---->
-<!--            <div class="posts">-->
-<!---->
-<!--                --><?php //while (have_posts()): the_post(); ?>
-<!--                <div class="post">-->
-<!--                    <h3>--><?php //the_title(); ?><!--</h3>-->
-                    <p><?php the_excerpt(); ?></p>
-                    <span class="meta"><a href="<?php the_permalink(); ?>">Read more...</a></span>
-<!--                </div>-->
-<!--                --><?php //endwhile; ?>
-<!---->
-<!--            </div>-->
-<!---->
-<!--        </div>-->
+        <div class="clear"></div>
 
 
 
