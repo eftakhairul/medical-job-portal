@@ -17,9 +17,14 @@ class ApplicantController extends BaseController
         $this->load->library('form_validation');
     }
 
-    public function editApplicant()
+    public function editApplicant($id = null)
     {
-        $applicantId = $this->session->userdata('user_id');
+        if (empty($id)) {
+            $applicantId = $this->session->userdata('user_id');
+        } else {
+            $applicantId = $id;
+        }
+
         $this->form_validation->setRulesForCreateApplicant();
 
         if (!empty ($_POST)) {

@@ -47,7 +47,9 @@
                         <?php endif;?>
 
                         <?php if($this->session->userdata('user_type') == EMPLOYER): ?>
-                        <li class="active"><a href="<?php echo site_url('home/employerDeashboard') ?>">Home</a></li>
+                        <li class="active"><a href="<?php echo site_url('home/employerDeashboard') ?>">Home</a>
+
+                        </li>
                         <?php endif;?>
 
                         <?php if($this->session->userdata('user_type') == APPLICANT): ?>
@@ -58,7 +60,7 @@
                         <li class="active"><a href="<?php echo site_url('user/index') ?>">User Management</a></li>
                         <?php endif;?>
 
-                        <?php if($this->session->userdata('user_type') == EMPLOYER): ?>
+                        <?php if($this->session->userdata('user_type') == ADMIN): ?>
                         <li class="active"><a href="<?php echo site_url('jobs') ?>">Jobs</a>
                             <ul>
                                 <li><a href="<?php echo site_url('jobs') ?>">View Jobs</a></li>
@@ -82,15 +84,15 @@
 
 
                         <?php if($this->session->userdata('user_type') == ADMIN): ?>
-                        <li class="active"><a href="<?php echo site_url('auth/changePassword') ?>">Account Setting</a>
+                        <li class="active"><a href="<?php echo site_url('auth/changePassword') ?>">Account Settings</a>
                         <?php endif; ?>
 
                         <?php if($this->session->userdata('user_type') == APPLICANT): ?>
-                        <li class="active"><a href="<?php echo site_url('applicant/editApplicant') ?>">Account Setting</a>
+                        <li class="active"><a href="<?php echo site_url('applicant/editApplicant') ?>">Account Settings</a>
                         <?php endif; ?>
 
                         <?php if($this->session->userdata('user_type') == EMPLOYER): ?>
-                        <li class="active"><a href="<?php echo site_url('employer/editEmployer') ?>">Account Setting</a>
+                        <li class="active"><a href="<?php echo site_url('employer/editEmployer') ?>">Account Settings</a>
                         <?php endif; ?>
                             <ul>
                                 <?php if($this->session->userdata('user_type') == APPLICANT): ?>

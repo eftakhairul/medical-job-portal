@@ -17,9 +17,14 @@ class EmployerController extends BaseController
         $this->load->library('form_validation');
     }
 
-    public function editEmployer()
+    public function editEmployer($id = null)
     {
-        $employerId = $this->session->userdata('user_id');
+        if (empty($id)) {
+            $employerId = $this->session->userdata('user_id');
+        } else {
+            $employerId = $id;
+        }
+
         $this->form_validation->setRulesForCreateEmployer();
 
         if (!empty ($_POST)) {

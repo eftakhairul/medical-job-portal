@@ -2,6 +2,9 @@
 
     <div class="block_head">
         <h2><?php echo $jobs['title']; ?></h2>
+        <ul>
+            <a href="javascript: history.go(-1)">Back</a>
+        </ul>
     </div> <!--.block_head ends -->
     
     <div class="block_content">

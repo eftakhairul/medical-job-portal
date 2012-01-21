@@ -2,6 +2,9 @@
 
     <div class="block_head">
         <h2>All Published Jobs</h2>
+        <ul>
+            <a href="<?php echo site_url('jobs/create') ?>">New Jobs</a>
+        </ul>
     </div> <!--.block_head ends -->
     
     <div class="block_content">

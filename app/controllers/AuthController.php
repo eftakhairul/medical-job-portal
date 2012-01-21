@@ -38,17 +38,7 @@ class AuthController extends BaseController
                     $this->session->set_userdata('userName', $result['username']);
                     $this->session->set_userdata('user_id', $result['user_id']);
                     $this->session->set_userdata('user_type', $result['types']);
-
-                    $this->redirectForSuccess('jobs', 'You have successfully logged in.');
-
-                    if($result['types'] == APPLICANT) {
-                        $this->redirectForSuccess('home/applicantDeashboard', 'You have successfully logged in.');
-                    }
-
-                    if($result['types'] == EMPLOYER) {
-                        $this->redirectForSuccess('home/employerDeashboard', 'You have successfully logged in.');
-                    }
-
+                    $this->redirectForSuccess('home', 'You have successfully logged in.');
 
                 } else {
                     $this->data['error'] = 'Enter correct Username & Password.';
@@ -68,14 +58,20 @@ class AuthController extends BaseController
 		redirect('auth/login');
 	}
 
-    public function changePassword()
+    public function changePassword($id = null)
 	{
+        if (empty($id)) {
+            $userId = $this->session->userdata('user_id');
+        } else {
+            $userId = $id;
+        }
+
         $this->form_validation->setRulesForChangePassword();
 
 		if (!empty($_POST)) {
 
             if($this->form_validation->run()){
-                $_POST['user_id'] = $this->session->userdata('user_id');
+                $_POST['user_id'] = $userId;
                 $this->users->modify($_POST);
                 $this->redirectForSuccess('home', 'Password is changed successfully.');
             } else {

@@ -66,15 +66,13 @@ class JobBoards extends MY_Model
 
         $limit = $this->config->item('rowsPerPage');
 
-        $sql = "SELECT `applicants`.*, {$this->table}.`create_date` AS application_date
-                FROM  {$this->table}
-                Join `applicants` ON `applicants`.`user_id` = {$this->table}.`applicant_id`
-                WHERE `job_id` in ( SELECT `job_id`
-                                           FROM `jobs`
-                                            WHERE `user_id` = {$employerId} )
-                LIMIT $offset, {$limit}";
-
-        $result =  $this->db->query($sql)->result_array();
+        $this->db->select("`applicants`.*, {$this->table}.`create_date` AS application_date");
+        $this->db->from($this->table);
+        $this->db->join("applicants", "applicants.user_id = {$this->table}.applicant_id");
+        $this->db->join("jobs", "jobs.job_id = {$this->table}.job_id");
+        $this->db->where("jobs.user_id = {$employerId}");
+        $this->db->limit($limit, $offset);
+        $result = $this->db->get()->result_array();
 
         if(empty($result)) {
             return false;

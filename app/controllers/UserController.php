@@ -1,4 +1,4 @@
-s<?php
+<?php
 /**
  * Description of User Controller
  *
@@ -26,18 +26,6 @@ class UserController extends BaseController
         $this->layout->view('user/index', $this->data);
     }
 
-    public function delete()
-    {
-        $data = $this->uri->uri_to_assoc();
-
-        if (empty ($data['id'])) {
-            $this->redirectForFailure('user', 'User is not found');
-        } else {
-            $this->jobs->delete($data['id']);
-            $this->redirectForSuccess('User', 'User is deleted successfully');
-        }
-    }
-
     private function processPagination()
     {
         $this->load->library('pagination');
@@ -54,5 +42,17 @@ class UserController extends BaseController
         );
 
         $this->pagination->setOptions($paginationOptions);
+    }
+
+    public function delete()
+    {
+        $data = $this->uri->uri_to_assoc();
+
+        if (empty ($data['id'])) {
+            $this->redirectForFailure('user', 'User is not found');
+        } else {
+            $this->users->delete($data['id']);
+            $this->redirectForSuccess('User', 'User is deleted successfully');
+        }
     }
 }

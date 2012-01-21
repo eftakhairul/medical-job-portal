@@ -156,6 +156,8 @@ class JobsController extends BaseController
         $page = empty ($uriAssoc['page']) ? 0 : $uriAssoc['page'];
         $this->data['jobs'] = $this->jobboards->getAllApplications($page, $this->userId);
 
+        //var_dump($this->data['jobs']); die;
+
         $paginationOptions = array(
             'baseUrl' => $url . '/page/',
             'segmentValue' => $this->uri->getSegmentIndex('page') + 1,

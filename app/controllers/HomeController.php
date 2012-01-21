@@ -23,7 +23,18 @@ class HomeController extends BaseController
 
     public function index()
     {
-        $this->load->view('layouts/fontend');
+        $userTypes = $this->session->userdata('user_type');
+        if ($userTypes == APPLICANT) {
+            redirect('home/applicantDeashboard');
+        }
+
+        if ($userTypes == ADMIN) {
+            redirect('home/adminDeashboard');
+        }
+
+        if ($userTypes == EMPLOYER) {
+            redirect('home/employerDeashboard');
+        }
     }
 
     public function employerDeashboard()

@@ -69,4 +69,14 @@ class Users extends MY_Model
 
         return $this->update($data, $data['user_id']);
     }
+
+    public function delete($userId = null)
+    {
+        if(empty ($userId)) {
+            return false;
+        }
+
+        $this->remove($userId);
+        return true;
+    }
 }

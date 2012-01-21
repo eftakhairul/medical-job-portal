@@ -90,7 +90,8 @@
                         </p>
 
                         <p>
-                            <input type="submit" class="submit" value="Login" name="submit" />
+                            <input type="submit" class="submit" value="Login" name="submit" /> | <a href="http://ishuvo.com/jobs/">Back To Main Page</a>
+<!--                            <a href="javascript: history.go(-1)">Back To Main Page</a>-->
                         </p>
                     </form>
 
