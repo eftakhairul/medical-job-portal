@@ -2,16 +2,16 @@ $(function () {
 	
 	// Preload images
 	$.preloadCssImages();
-	
-	
+
+
 	// Style file input
-	$("input[type=file]").filestyle({ 
-	    image: "images/upload.gif",
-	    imageheight : 30,
-	    imagewidth : 80,
-	    width : 250
-	});
-	
+//	$("input[type=file]").filestyle({
+//	    image: "images/upload.gif",
+//	    imageheight : 30,
+//	    imagewidth : 80,
+//	    width : 250
+//	});
+
 	
 	// Web stats
 	$('table.stats').hide().visualize({		
@@ -97,7 +97,7 @@ $(function () {
 	$('#header #nav li:last').addClass('nobg');
 	$('.block_head ul').each(function() { $('li:first', this).addClass('nobg'); });
 	$('.block table tr:odd').css('background-color', '#fbfbfb');
-	$('.block form input[type=file]').addClass('file');
+	//$('.block form input[type=file]').addClass('file');
 	
 
 	// Navigation dropdown fix for IE6
